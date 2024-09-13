@@ -16,10 +16,6 @@ contract EventNFT is ERC721, ERC721Enumerable, ERC721Pausable, Ownable {
         Ownable(initialOwner)
     {}
 
-    function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmY5rPqGTN1rZxMQg2ApiSZc7JiBNs1ryDzXPZpQhC1ibm";
-    }
-
     function pause() public onlyOwner {
         _pause();
     }
