@@ -11,9 +11,9 @@ contract EventNFT is ERC721, ERC721Enumerable, ERC721Pausable, Ownable {
     uint256 private _nextTokenId;
     mapping(uint256 => uint256) public tokenEventMapping;
 
-    constructor(address initialOwner)
+    constructor()
         ERC721("EventNFT", "ENT")
-        Ownable(initialOwner)
+        Ownable(msg.sender)
     {}
 
     function pause() public onlyOwner {
